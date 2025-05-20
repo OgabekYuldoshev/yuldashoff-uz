@@ -1,6 +1,23 @@
 {
-  "commit": "c9694bab9df0684b5c87e1134007c6205349880a",
-  "generated": "2025-05-20T16:17:00.622Z",
+  "commit": "459ecab6d51ae302beb5b4c33f694c737d64560e",
+  "generated": "2025-05-20T16:17:36.325Z",
   "metadata": [
+    {
+      "__outstatic": {
+        "commit": "459ecab6d51ae302beb5b4c33f694c737d64560e",
+        "hash": "3720155670",
+        "path": "outstatic/content/posts/test-popst.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "posts",
+      "description": "Test POPst",
+      "publishedAt": "2025-05-20T16:47:01.231Z",
+      "slug": "test-popst",
+      "status": "draft",
+      "title": "Test POPst"
+    }
   ]
 }

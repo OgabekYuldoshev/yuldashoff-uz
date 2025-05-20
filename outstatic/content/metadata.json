@@ -1,6 +1,6 @@
 {
-  "commit": "250506ccf9ae07eca8c794fe61c55d2a1c5dae93",
-  "generated": "2025-05-20T19:09:16.592Z",
+  "commit": "ec7ad3d383fadeb99ce2da5c60b5f0f5886307e7",
+  "generated": "2025-05-20T19:10:05.109Z",
   "metadata": [
     {
       "__outstatic": {
@@ -18,24 +18,6 @@
       "slug": "test-popst",
       "status": "published",
       "title": "6 Advanced TypeScript tricks for Clean Code"
-    },
-    {
-      "__outstatic": {
-        "commit": "250506ccf9ae07eca8c794fe61c55d2a1c5dae93",
-        "hash": "1575813851",
-        "path": "outstatic/content/projects/test.mdx"
-      },
-      "author": {
-        "name": "Ogabek",
-        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
-      },
-      "collection": "projects",
-      "href": "http://localhost:3000/outstatic/projects/new",
-      "image": "/images/cover.jpg",
-      "publishedAt": "2025-05-20T13:37:41.200Z",
-      "slug": "test",
-      "status": "published",
-      "title": "Test"
     }
   ]
 }

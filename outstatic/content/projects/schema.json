@@ -1,6 +1,12 @@
 {
-  "title": "Projects",
-  "slug": "projects",
+  "title": "projects",
   "type": "object",
-  "properties": {}
+  "properties": {
+    "image": {
+      "required": true,
+      "fieldType": "Image",
+      "dataType": "image",
+      "title": "image"
+    }
+  }
 }

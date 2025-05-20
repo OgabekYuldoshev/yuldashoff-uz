@@ -1,11 +1,11 @@
 {
-  "commit": "d0e0cef304087d01b1fe521f2235c058a9f8594c",
-  "generated": "2025-05-20T16:17:43.250Z",
+  "commit": "9fc079e817c0b9628083e1a841c1ef0f29bf52f6",
+  "generated": "2025-05-20T18:40:45.504Z",
   "metadata": [
     {
       "__outstatic": {
-        "commit": "d0e0cef304087d01b1fe521f2235c058a9f8594c",
-        "hash": "2601097362",
+        "commit": "9fc079e817c0b9628083e1a841c1ef0f29bf52f6",
+        "hash": "3405877032",
         "path": "outstatic/content/posts/test-popst.mdx"
       },
       "author": {
@@ -13,11 +13,11 @@
         "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
       },
       "collection": "posts",
-      "description": "Test POPst",
+      "description": "Six advanced TypeScript tips will be covered here, along with examples showing how each one works step by step and their benefits. By using these tips in your own TypeScript code, you not only raise the general standard of your writing but also grow your skills as a TypeScript programmer.",
       "publishedAt": "2025-05-20T16:47:01.231Z",
       "slug": "test-popst",
       "status": "published",
-      "title": "Test POPst"
+      "title": "6 Advanced TypeScript tricks for Clean Code"
     }
   ]
 }

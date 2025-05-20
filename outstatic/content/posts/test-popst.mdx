@@ -1,12 +1,400 @@
 ---
-title: "Test POPst"
+title: "6 Advanced TypeScript tricks for Clean Code"
 publishedAt: "2025-05-20T16:47:01.231Z"
 status: "published"
 author:
   name: "Ogabek"
   picture: "https://avatars.githubusercontent.com/u/70449019?v=4"
 slug: "test-popst"
-description: "Test POPst"
+description: "Six advanced TypeScript tips will be covered here, along with examples showing how each one works step by step and their benefits. By using these tips in your own TypeScript code, you not only raise the general standard of your writing but also grow your skills as a TypeScript programmer."
 ---
 
-Test POPst
+# **1 — Advanced Types**
+
+You may build new kinds based on existing ones using advanced TypeScript types like mapped types and conditional types. With the aid of these kinds, you may change and manipulate types in strong ways, giving your code more flexibility and maintainability.
+
+## **Mapped Types**
+
+Mapped types iterate over the properties of an existing type and apply a transformation to create a new type. One common use case is to create a read-only version of a type.
+
+```
+type Readonly<T> = {
+  readonly [P in keyof T]: T[P];
+};
+interface Point {
+  x: number;
+  y: number;
+}
+type ReadonlyPoint = Readonly<Point>;
+```
+
+In this example, we define a mapped type called `Readonly`, which takes a type `T` as a generic parameter and makes all its properties read-only. We then create a `ReadonlyPoint` type based on the `Point` interface, where all properties are read-only.
+
+## **Conditional Types**
+
+Conditional types allow you to create a new type based on a condition. The syntax is similar to the ternary operator, using the `extends` keyword as a type constraint.
+
+```
+type NonNullable<T> = T extends null | undefined ? never : T;
+```
+
+In this example, we define a conditional type called `NonNullable`, which takes a type `T` and checks if it extends `null` or `undefined`. If it does, the resulting type is `never`, otherwise, it's the original type `T`.
+
+Let’s expand the advanced types example to include more usability and outputs.
+
+```
+interface Point {
+  x: number;
+  y: number;
+}
+
+type ReadonlyPoint = Readonly<Point>;
+
+const regularPoint: Point = {
+  x: 5,
+  y: 10
+};
+
+const readonlyPoint: ReadonlyPoint = {
+  x: 20,
+  y: 30
+};
+
+regularPoint.x = 15; // This works as 'x' is mutable in the 'Point' interface
+console.log(regularPoint); // Output: { x: 15, y: 10 }
+
+// readonlyPoint.x = 25; // Error: Cannot assign to 'x' because it is a read-only property
+console.log(readonlyPoint); // Output: { x: 20, y: 30 }
+
+function movePoint(p: Point, dx: number, dy: number): Point {
+  return { x: p.x + dx, y: p.y + dy };
+}
+
+const movedRegularPoint = movePoint(regularPoint, 3, 4);
+console.log(movedRegularPoint); // Output: { x: 18, y: 14 }
+
+// const movedReadonlyPoint = movePoint(readonlyPoint, 3, 4); // Error: Argument of type 'ReadonlyPoint' is not assignable to parameter of type 'Point'
+```
+
+In this example, we demonstrate the usage of the `Readonly` mapped type and how it enforces immutability. We create a mutable `Point` object and a read-only `ReadonlyPoint` object. We show that attempting to modify a read-only property results in a compile-time error. We also illustrate that read-only types cannot be used where mutable types are expected, preventing unintended side effects in our code.
+
+# **2 — Decorators**
+
+Decorators in TypeScript are a powerful feature that allows you to add metadata, modify or extend the behavior of classes, methods, properties, and parameters. They are higher-order functions that can be used to observe, modify, or replace class definitions, method definitions, accessor definitions, property definitions, or parameter definitions.
+
+## **Class Decorators**
+
+Class decorators are applied to the constructor of a class and can be used to modify or extend the class definition.
+
+```
+function LogClass(target: Function) {
+  console.log(`Class ${target.name} was defined.`);
+}
+
+@LogClass
+class MyClass {
+  constructor() {}
+}
+```
+
+In this example, we define a class decorator called `LogClass`, which logs the name of the decorated class when it is defined. We then apply the decorator to the `MyClass` class using the `@` syntax.
+
+## **Method Decorators**
+
+Method decorators are applied to a method of a class and can be used to modify or extend the method definition.
+
+```
+function LogMethod(target: any, key: string, descriptor: PropertyDescriptor) {
+  console.log(`Method ${key} was called.`);
+}
+
+class MyClass {
+  @LogMethod
+  myMethod() {
+    console.log("Inside myMethod.");
+  }
+}
+
+const instance = new MyClass();
+instance.myMethod();
+```
+
+In this example, we define a method decorator called `LogMethod`, which logs the name of the decorated method when it is called. We then apply the decorator to the `myMethod` method of the `MyClass` class using the `@` syntax.
+
+## **Property Decorators**
+
+Property decorators are applied to a property of a class and can be used to modify or extend the property definition.
+
+```
+function DefaultValue(value: any) {
+  return (target: any, key: string) => {
+    target[key] = value;
+  };
+}
+
+class MyClass {
+  @DefaultValue(42)
+  myProperty: number;
+}
+
+const instance = new MyClass();
+console.log(instance.myProperty); // Output: 42
+```
+
+In this example, we define a property decorator called `DefaultValue`, which sets a default value for the decorated property. We then apply the decorator to the `myProperty` property of the `MyClass` class using the `@` syntax.
+
+## **Parameter Decorators**
+
+Parameter decorators are applied to a parameter of a method or constructor and can be used to modify or extend the parameter definition.
+
+```
+function LogParameter(target: any, key: string, parameterIndex: number) {
+  console.log(`Parameter at index ${parameterIndex} of method ${key} was called.`);
+}
+
+class MyClass {
+  myMethod(@LogParameter value: number) {
+    console.log(`Inside myMethod with value ${value}.`);
+  }
+}
+
+const instance = new MyClass();
+instance.myMethod(5);
+```
+
+In this example, we define a parameter decorator called `LogParameter`, which logs the index and name of the decorated parameter when the method is called. We then apply the decorator to the `value` parameter of the `myMethod` method of the `MyClass` class using the `@` syntax.
+
+# **3 — Namespaces**
+
+Namespaces in TypeScript are a way to organize and group related code. They help you avoid naming collisions and promote modularity by encapsulating code that belongs together. Namespaces can contain classes, interfaces, functions, variables, and other namespaces.
+
+## **Defining Namespaces**
+
+To define a namespace, use the `namespace` keyword followed by the namespace name. You can then add any related code inside the curly braces.
+
+```
+namespace MyNamespace {
+  export class MyClass {
+    constructor(public value: number) {}
+
+    displayValue() {
+      console.log(`The value is: ${this.value}`);
+    }
+  }
+}
+```
+
+In this example, we define a namespace called `MyNamespace` and add a class `MyClass` inside it. Notice that we use the `export` keyword to make the class accessible outside the namespace.
+
+## **Using Namespaces**
+
+To use code from a namespace, you can either use the fully-qualified name or import the code using a namespace import.
+
+```
+// Using the fully-qualified name
+const instance1 = new MyNamespace.MyClass(5);
+instance1.displayValue(); // Output: The value is: 5
+
+// Using a namespace import
+import MyClass = MyNamespace.MyClass;
+
+const instance2 = new MyClass(10);
+instance2.displayValue(); // Output: The value is: 10
+```
+
+In this example, we demonstrate two ways of using the `MyClass` class from the `MyNamespace` namespace. First, we use the fully-qualified name `MyNamespace.MyClass`. Second, we use a namespace import statement to import the `MyClass` class and use it with a shorter name.
+
+## **Nested Namespaces**
+
+Namespaces can be nested to create a hierarchy and further organize your code.
+
+```
+namespace OuterNamespace {
+  export namespace InnerNamespace {
+    export class MyClass {
+      constructor(public value: number) {}
+
+      displayValue() {
+        console.log(`The value is: ${this.value}`);
+      }
+    }
+  }
+}
+
+// Using the fully-qualified name
+const instance = new OuterNamespace.InnerNamespace.MyClass(15);
+instance.displayValue(); // Output: The value is: 15
+```
+
+In this example, we define a nested namespace called `InnerNamespace` inside the `OuterNamespace`. We then define a class `MyClass` inside the nested namespace and use it with the fully-qualified name `OuterNamespace.InnerNamespace.MyClass`.
+
+# **4 — Mixins**
+
+Mixins in TypeScript are a way to compose classes from multiple smaller parts, called mixin classes. They allow you to reuse and share behavior between different classes, promoting modularity and code reusability.
+
+## **Defining Mixins**
+
+To define a mixin class, create a class that extends a generic type parameter with a constructor signature. This allows the mixin class to be combined with other classes.
+
+```
+class TimestampMixin<TBase extends new (...args: any[]) => any>(Base: TBase) {
+  constructor(...args: any[]) {
+    super(...args);
+  }
+
+  getTimestamp() {
+    return new Date();
+  }
+}
+```
+
+In this example, we define a mixin class called `TimestampMixin` that adds a `getTimestamp` method, which returns the current date and time. The mixin class extends a generic type parameter `TBase` with a constructor signature to allow it to be combined with other classes.
+
+## **Using Mixins**
+
+To use a mixin class, define a base class and apply the mixin class to it using the `extends` keyword.
+
+```
+class MyBaseClass {
+  constructor(public value: number) {}
+
+  displayValue() {
+    console.log(`The value is: ${this.value}`);
+  }
+}
+
+class MyMixedClass extends TimestampMixin(MyBaseClass) {
+  constructor(value: number) {
+    super(value);
+  }
+}
+```
+
+In this example, we define a base class called `MyBaseClass` with a `displayValue` method. We then create a new class called `MyMixedClass` that extends the base class and applies the `TimestampMixin` mixin class to it.
+
+Let’s demonstrate how the mixin class works in practice.
+
+```
+const instance = new MyMixedClass(42);
+instance.displayValue(); // Output: The value is: 42
+const timestamp = instance.getTimestamp();
+console.log(`The timestamp is: ${timestamp}`); // Output: The timestamp is: [current date and time]
+```
+
+In this example, we create an instance of the `MyMixedClass` class, which includes both the `displayValue` method from the `MyBaseClass` and the `getTimestamp` method from the `TimestampMixin` mixin class. We then call both methods and display their outputs.
+
+# **5 — Type Guards**
+
+Type guards in TypeScript are a way to narrow down the type of a variable or parameter within a specific block of code. They allow you to differentiate between different types and access properties or methods specific to those types, promoting type safety and reducing the likelihood of runtime errors.
+
+## **Defining Type Guards**
+
+To define a type guard, create a function that takes a variable or parameter and returns a type predicate. A type predicate is a boolean expression that narrows down the type of the parameter within the scope of the function.
+
+```
+function isString(value: any): value is string {
+  return typeof value === "string";
+}
+```
+
+In this example, we define a type guard function called `isString` that checks if a given value is of type `string`. The function returns a type predicate `value is string`, which narrows down the type of the `value` parameter within the scope of the function.
+
+## **Using Type Guards**
+
+To use a type guard, simply call the type guard function in a conditional statement, such as an `if` statement or a `switch` statement.
+
+```
+function processValue(value: string | number) {
+  if (isString(value)) {
+    console.log(`The length of the string is: ${value.length}`);
+  } else {
+    console.log(`The square of the number is: ${value * value}`);
+  }
+}
+```
+
+In this example, we define a function called `processValue` that takes a value of type `string | number`. We use the `isString` type guard function to check if the value is a string. If it is, we access the `length` property specific to the `string` type. Otherwise, we assume the value is a `number` and calculate its square.
+
+Let’s demonstrate how the type guard works in practice.
+
+```
+processValue("hello"); // Output: The length of the string is: 5
+processValue(42); // Output: The square of the number is: 1764
+```
+
+In this example, we call the `processValue` function with both a string and a number. The type guard function `isString` ensures that the appropriate code block is executed for each type, allowing us to access type-specific properties and methods without any type errors.
+
+# **6 — Utility Types**
+
+Utility types in TypeScript provide a convenient way to transform existing types into new types. They allow you to create more complex and flexible types without having to define them from scratch, promoting code reusability and type safety.
+
+## **Using Utility Types**
+
+To use a utility type, apply the utility type to an existing type using the angle bracket syntax. TypeScript provides a variety of built-in utility types, such as `Partial`, `Readonly`, `Pick`, and `Omit`.
+
+```
+interface Person {
+  name: string;
+  age: number;
+  email: string;
+}
+
+type PartialPerson = Partial<Person>;
+type ReadonlyPerson = Readonly<Person>;
+type NameAndAge = Pick<Person, "name" | "age">;
+type WithoutEmail = Omit<Person, "email">;
+```
+
+In this example, we define an interface called `Person` with three properties: `name`, `age`, and `email`. We then use various built-in utility types to create new types based on the `Person` interface.
+
+Let’s demonstrate how the utility types work in practice.
+
+**Partial:**
+
+```
+const partialPerson: PartialPerson = {
+  name: "John Doe",
+};
+```
+
+In this example, we create a `partialPerson` object of type `PartialPerson`. The `Partial` utility type makes all properties of the `Person` interface optional, allowing us to create a partial person with only a `name` property.
+
+**Readonly:**
+
+```
+const readonlyPerson: ReadonlyPerson = {
+  name: "Jane Doe",
+  age: 30,
+  email: "jane@example.com",
+};
+
+// readonlyPerson.age = 31; // Error: Cannot assign to 'age' because it is a read-only property
+```
+
+In this example, we create a `readonlyPerson` object of type `ReadonlyPerson`. The `Readonly` utility type makes all properties of the `Person` interface read-only, preventing us from modifying the `age` property.
+
+**Pick:**
+
+```
+const nameAndAge: NameAndAge = {
+  name: "John Smith",
+  age: 25,
+};
+
+// nameAndAge.email; // Error: Property 'email' does not exist on type 'Pick<Person, "name" | "age">'
+```
+
+In this example, we create a `nameAndAge` object of type `NameAndAge`. The `Pick` utility type creates a new type with only the specified properties of the `Person` interface, in this case, `name` and `age`.
+
+**Omit:**
+
+```
+const withoutEmail: WithoutEmail = {
+  name: "Jane Smith",
+  age: 28,
+};
+
+// withoutEmail.email; // Error: Property 'email' does not exist on type 'Omit<Person, "email">'
+```
+
+In this example, we create a `withoutEmail` object of type `WithoutEmail`. The `Omit` utility type creates a new type by removing the specified properties from the `Person` interface, in this case, `email`.

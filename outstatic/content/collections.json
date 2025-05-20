@@ -4,5 +4,11 @@
     "slug": "projects",
     "path": "outstatic/content/projects",
     "children": []
+  },
+  {
+    "title": "Posts",
+    "slug": "posts",
+    "path": "outstatic/content/posts",
+    "children": []
   }
 ]

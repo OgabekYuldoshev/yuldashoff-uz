@@ -1,0 +1,22 @@
+{
+  "commit": "",
+  "generated": "2025-05-20T12:55:02.667Z",
+  "metadata": [
+    {
+      "__outstatic": {
+        "commit": "",
+        "hash": "1688719816",
+        "path": "outstatic/content/projects/hello.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "publishedAt": "2025-05-20T13:24:55.313Z",
+      "slug": "hello",
+      "status": "draft",
+      "title": "Hello"
+    }
+  ]
+}

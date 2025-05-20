@@ -1,10 +1,10 @@
 {
-  "commit": "7b018a4462f7cd3e71283a3fda40b551c3655c13",
-  "generated": "2025-05-20T19:10:41.169Z",
+  "commit": "",
+  "generated": "Tue, 20 May 2025 19:17:28 GMT",
   "metadata": [
     {
       "__outstatic": {
-        "commit": "9fc079e817c0b9628083e1a841c1ef0f29bf52f6",
+        "commit": "b7641ae3eaa53afb09c851cbbc935d10d9590f83",
         "hash": "3405877032",
         "path": "outstatic/content/posts/test-popst.mdx"
       },
@@ -21,7 +21,7 @@
     },
     {
       "__outstatic": {
-        "commit": "7b018a4462f7cd3e71283a3fda40b551c3655c13",
+        "commit": "a168529624e83e7c44148b1d7cfcf4bd8180f19d",
         "hash": "3059994975",
         "path": "outstatic/content/projects/6-advanced-typescript-tricks-for-clean-code.mdx"
       },

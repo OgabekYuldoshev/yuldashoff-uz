@@ -1,11 +1,11 @@
 {
-  "commit": "",
-  "generated": "Tue, 20 May 2025 13:23:21 GMT",
+  "commit": "ecf6d365260656b513479a1270937b17c3705216",
+  "generated": "2025-05-20T13:23:57.385Z",
   "metadata": [
     {
       "__outstatic": {
-        "commit": "e13a6b51a2763975460130df793ee1ddfcc5eddb",
-        "hash": "1690854898",
+        "commit": "ecf6d365260656b513479a1270937b17c3705216",
+        "hash": "1513049200",
         "path": "outstatic/content/projects/test.mdx"
       },
       "author": {
@@ -14,7 +14,7 @@
       },
       "collection": "projects",
       "href": "http://localhost:3000/outstatic/projects/new",
-      "image": "//cover.jpg",
+      "image": "/images/cover.jpg",
       "publishedAt": "2025-05-20T13:37:41.200Z",
       "slug": "test",
       "status": "draft",

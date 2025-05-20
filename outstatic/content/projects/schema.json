@@ -7,6 +7,12 @@
       "fieldType": "Image",
       "dataType": "image",
       "title": "image"
+    },
+    "href": {
+      "required": true,
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "href"
     }
   }
 }

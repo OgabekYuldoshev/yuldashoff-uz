@@ -1,6 +1,6 @@
 {
-  "commit": "ecf6d365260656b513479a1270937b17c3705216",
-  "generated": "2025-05-20T13:23:57.385Z",
+  "commit": "10308d9ff57f68d5dc23111b4a44cd04d02f30ab",
+  "generated": "2025-05-20T16:13:43.280Z",
   "metadata": [
     {
       "__outstatic": {
@@ -16,6 +16,22 @@
       "href": "http://localhost:3000/outstatic/projects/new",
       "image": "/images/cover.jpg",
       "publishedAt": "2025-05-20T13:37:41.200Z",
+      "slug": "test",
+      "status": "draft",
+      "title": "Test"
+    },
+    {
+      "__outstatic": {
+        "commit": "10308d9ff57f68d5dc23111b4a44cd04d02f30ab",
+        "hash": "2693230153",
+        "path": "outstatic/content/posts/test.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "posts",
+      "publishedAt": "2025-05-20T16:43:15.733Z",
       "slug": "test",
       "status": "draft",
       "title": "Test"

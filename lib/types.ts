@@ -6,6 +6,4 @@ export interface Project extends OstDocument {
 }
 
 export interface Post extends OstDocument {
-	excerpt: string;
-	coverImage: string;
 }

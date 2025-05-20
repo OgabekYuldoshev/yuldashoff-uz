@@ -1,0 +1,39 @@
+{
+  "commit": "",
+  "generated": "Tue, 20 May 2025 13:08:06 GMT",
+  "media": [
+    {
+      "__outstatic": {
+        "commit": "",
+        "hash": "0",
+        "path": "public/cover.jpg"
+      },
+      "alt": "",
+      "filename": "cover.jpg",
+      "publishedAt": "2025-05-20T13:08:05.887Z",
+      "type": "image"
+    },
+    {
+      "__outstatic": {
+        "commit": "",
+        "hash": "0",
+        "path": "public/next.svg"
+      },
+      "alt": "",
+      "filename": "next.svg",
+      "publishedAt": "2025-05-20T13:08:05.887Z",
+      "type": "image"
+    },
+    {
+      "__outstatic": {
+        "commit": "",
+        "hash": "0",
+        "path": "public/vercel.svg"
+      },
+      "alt": "",
+      "filename": "vercel.svg",
+      "publishedAt": "2025-05-20T13:08:05.887Z",
+      "type": "image"
+    }
+  ]
+}

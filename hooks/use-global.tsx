@@ -1,24 +1,31 @@
 "use client";
 
+import type { Post, Project } from "@/lib/types";
+import React from "react";
+
 interface TGlobalContext {
   projects: Project[];
+  posts: Post[];
 }
 
 const GlobalContext = React.createContext<TGlobalContext>({
   projects: [],
+  posts: [],
 });
-
-import type { Project } from "@/lib/types";
-import React from "react";
 
 interface GlobalProviderProps {
   projects: Project[];
+  posts: Post[];
   children: React.ReactNode;
 }
 
-export function GlobalProvider({ projects, children }: GlobalProviderProps) {
+export function GlobalProvider({
+  projects,
+  children,
+  posts,
+}: GlobalProviderProps) {
   return (
-    <GlobalContext.Provider value={{ projects }}>
+    <GlobalContext.Provider value={{ projects, posts }}>
       {children}
     </GlobalContext.Provider>
   );

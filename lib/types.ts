@@ -6,4 +6,5 @@ export interface Project extends OstDocument {
 }
 
 export interface Post extends OstDocument {
+	description: string
 }

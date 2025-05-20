@@ -1,4 +1,4 @@
-import type { Project } from "@/lib/types";
+import type { Post, Project } from "@/lib/types";
 import { ThemeProvider } from "next-themes";
 import { load } from "outstatic/server";
 import React, { type PropsWithChildren } from "react";
@@ -16,9 +16,16 @@ export default async function RootLayout({ children }: PropsWithChildren) {
     .sort({ publishedAt: -1 })
     .toArray();
 
-  console.log(projects);
+  const posts = await db
+    .find<Post>({
+      collection: "posts",
+    })
+    .project(["title", "description", "content", "slug", "publishedAt"])
+    .sort({ publishedAt: -1 })
+    .toArray();
+
   return (
-    <GlobalProvider projects={projects}>
+    <GlobalProvider projects={projects} posts={posts}>
       <ThemeProvider
         enableSystem={true}
         attribute="class"

@@ -1,6 +1,6 @@
 {
-  "commit": "a82eaf89ed38e46f8062b1168b467ac81daedf74",
-  "generated": "2025-05-20T19:10:32.772Z",
+  "commit": "7b018a4462f7cd3e71283a3fda40b551c3655c13",
+  "generated": "2025-05-20T19:10:41.169Z",
   "metadata": [
     {
       "__outstatic": {
@@ -21,8 +21,8 @@
     },
     {
       "__outstatic": {
-        "commit": "a82eaf89ed38e46f8062b1168b467ac81daedf74",
-        "hash": "103678488",
+        "commit": "7b018a4462f7cd3e71283a3fda40b551c3655c13",
+        "hash": "3059994975",
         "path": "outstatic/content/projects/6-advanced-typescript-tricks-for-clean-code.mdx"
       },
       "author": {

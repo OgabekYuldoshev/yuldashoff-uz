@@ -1,9 +1,8 @@
 import type { OstDocument } from "outstatic";
 
 export interface Project extends OstDocument {
-	description: string;
-	coverImage: string;
-	techStack: Array<{ label: string; value: string }>;
+	image: string;
+	href: string;
 }
 
 export interface Post extends OstDocument {

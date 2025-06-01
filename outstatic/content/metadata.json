@@ -1,6 +1,6 @@
 {
-  "commit": "e978c77846d2980a55689e2bad00139eaae8872d",
-  "generated": "2025-05-20T19:17:47.791Z",
+  "commit": "4dfda5e4b52a42c0581091a1738d2760bfa5b1e3",
+  "generated": "2025-06-01T08:01:11.712Z",
   "metadata": [
     {
       "__outstatic": {
@@ -16,24 +16,6 @@
       "description": "Six advanced TypeScript tips will be covered here, along with examples showing how each one works step by step and their benefits. By using these tips in your own TypeScript code, you not only raise the general standard of your writing but also grow your skills as a TypeScript programmer.",
       "publishedAt": "2025-05-20T16:47:01.231Z",
       "slug": "test-popst",
-      "status": "published",
-      "title": "6 Advanced TypeScript tricks for Clean Code"
-    },
-    {
-      "__outstatic": {
-        "commit": "e978c77846d2980a55689e2bad00139eaae8872d",
-        "hash": "3059994975",
-        "path": "outstatic/content/projects/6-advanced-typescript-tricks-for-clean-code.mdx"
-      },
-      "author": {
-        "name": "Ogabek",
-        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
-      },
-      "collection": "projects",
-      "href": "https://www.yuldashoff.uz/outstatic/projects/new",
-      "image": "/images/cover.jpg",
-      "publishedAt": "2025-05-20T19:40:06.314Z",
-      "slug": "6-advanced-typescript-tricks-for-clean-code",
       "status": "published",
       "title": "6 Advanced TypeScript tricks for Clean Code"
     }

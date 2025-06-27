@@ -1,23 +1,6 @@
 {
-  "commit": "07e1dae35396112004dda3ff7466e65f55b7cf4c",
-  "generated": "2025-06-27T06:32:31.645Z",
+  "commit": "9e90faf3d3dffd4cd50dd25d65584fdbdaeae273",
+  "generated": "2025-06-27T06:35:22.095Z",
   "metadata": [
-    {
-      "__outstatic": {
-        "commit": "07e1dae35396112004dda3ff7466e65f55b7cf4c",
-        "hash": "911780601",
-        "path": "outstatic/content/posts/top-7-react-state-management-libraries.mdx"
-      },
-      "author": {
-        "name": "Ogabek",
-        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
-      },
-      "collection": "posts",
-      "description": "Top 7 React State Management Libraries",
-      "publishedAt": "2025-06-27T07:01:28.718Z",
-      "slug": "top-7-react-state-management-libraries",
-      "status": "published",
-      "title": "Top 7 React State Management Libraries"
-    }
   ]
 }

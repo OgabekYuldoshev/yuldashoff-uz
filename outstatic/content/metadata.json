@@ -1,6 +1,6 @@
 {
-  "commit": "e959855410c0147fe7a72db2ceee42317d269a44",
-  "generated": "2025-07-01T09:58:04.636Z",
+  "commit": "87331c337715dddf8b9771decbaf93fa7524c794",
+  "generated": "2025-07-01T09:58:30.763Z",
   "metadata": [
     {
       "__outstatic": {
@@ -57,24 +57,6 @@
     },
     {
       "__outstatic": {
-        "commit": "b854278d784a8fc9a2c56879c63df955242d5580",
-        "hash": "3663712888",
-        "path": "outstatic/content/projects/intellectual-property-system.mdx"
-      },
-      "author": {
-        "name": "Ogabek",
-        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
-      },
-      "collection": "projects",
-      "href": "https://im.adliya.uz/",
-      "image": "/images/2025-07-01-145337_hyprshot-I2Nj.png",
-      "publishedAt": "2025-07-01T10:22:22.419Z",
-      "slug": "intellectual-property-system",
-      "status": "published",
-      "title": "Intellectual Property System"
-    },
-    {
-      "__outstatic": {
         "commit": "e959855410c0147fe7a72db2ceee42317d269a44",
         "hash": "232501862",
         "path": "outstatic/content/projects/uz-latin-cyrillic-transliterator-tool.mdx"
@@ -90,6 +72,24 @@
       "slug": "uz-latin-cyrillic-transliterator-tool",
       "status": "published",
       "title": "Uz Latin - Cyrillic Transliterator   Tool"
+    },
+    {
+      "__outstatic": {
+        "commit": "87331c337715dddf8b9771decbaf93fa7524c794",
+        "hash": "1922434429",
+        "path": "outstatic/content/projects/intellectual-property-system.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "href": "https://im.adliya.uz/",
+      "image": "/images/2025-07-01-145337_hyprshot-I2Nj.png",
+      "publishedAt": "2025-07-01T10:22:22.419Z",
+      "slug": "intellectual-property-system",
+      "status": "published",
+      "title": "Intellectual Property System"
     }
   ]
 }

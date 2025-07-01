@@ -1,6 +1,6 @@
 {
-  "commit": "07f74a7cd9c6ff3f6a785b6f544b682841ef560e",
-  "generated": "2025-07-01T09:49:19.939Z",
+  "commit": "9ef1cb1ff16db1de013dbd437adb6d304ccc2f8c",
+  "generated": "2025-07-01T09:51:25.093Z",
   "media": [
     {
       "__outstatic": {
@@ -22,6 +22,17 @@
       "alt": "",
       "filename": "2025-07-01-144842_hyprshot-MzNz.png",
       "publishedAt": "2025-07-01T09:49:19.939Z",
+      "type": "image"
+    },
+    {
+      "__outstatic": {
+        "commit": "9ef1cb1ff16db1de013dbd437adb6d304ccc2f8c",
+        "hash": "3144875715",
+        "path": "public/images/2025-07-01-145046_hyprshot-I5OT.png"
+      },
+      "alt": "",
+      "filename": "2025-07-01-145046_hyprshot-I5OT.png",
+      "publishedAt": "2025-07-01T09:51:25.093Z",
       "type": "image"
     },
     {

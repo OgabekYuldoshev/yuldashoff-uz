@@ -1,6 +1,6 @@
 {
-  "commit": "b14aab3cd0d125790abb317a095755ae535d5840",
-  "generated": "2025-07-01T09:52:04.130Z",
+  "commit": "b854278d784a8fc9a2c56879c63df955242d5580",
+  "generated": "2025-07-01T09:54:14.380Z",
   "metadata": [
     {
       "__outstatic": {
@@ -54,6 +54,24 @@
       "slug": "business-registration-system",
       "status": "published",
       "title": "Business Registration System"
+    },
+    {
+      "__outstatic": {
+        "commit": "b854278d784a8fc9a2c56879c63df955242d5580",
+        "hash": "3663712888",
+        "path": "outstatic/content/projects/intellectual-property-system.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "href": "https://im.adliya.uz/",
+      "image": "/images/2025-07-01-145337_hyprshot-I2Nj.png",
+      "publishedAt": "2025-07-01T10:22:22.419Z",
+      "slug": "intellectual-property-system",
+      "status": "published",
+      "title": "Intellectual Property System"
     }
   ]
 }

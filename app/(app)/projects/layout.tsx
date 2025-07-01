@@ -6,6 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+
 function CopyButton() {
   const [text, setText] = useState("Copy");
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";

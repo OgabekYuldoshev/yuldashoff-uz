@@ -2,15 +2,8 @@
 
 import { AnimatedBackground } from "@/components/ui/animated-background";
 import { Magnetic } from "@/components/ui/magnetic";
-import {
-  MorphingDialog,
-  MorphingDialogClose,
-  MorphingDialogContainer,
-  MorphingDialogContent,
-  MorphingDialogTrigger,
-} from "@/components/ui/morphing-dialog";
+
 import { Spotlight } from "@/components/ui/spotlight";
-import { XIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { EMAIL, SOCIAL_LINKS, WORK_EXPERIENCE } from "../../lib/config";
@@ -42,47 +35,13 @@ type ProjectImageProps = {
 
 function ProjectImage({ src }: ProjectImageProps) {
   return (
-    <MorphingDialog
-      transition={{
-        type: "spring",
-        bounce: 0,
-        duration: 0.3,
-      }}
-    >
-      <MorphingDialogTrigger>
-        <Image
-          width={300}
-          height={200}
-          alt=""
-          src={src}
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
-        />
-      </MorphingDialogTrigger>
-      <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <Image
-            width={300}
-            height={200}
-            alt=""
-            src={src}
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
-          />
-        </MorphingDialogContent>
-        <MorphingDialogClose
-          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
-          variants={{
-            initial: { opacity: 0 },
-            animate: {
-              opacity: 1,
-              transition: { delay: 0.3, duration: 0.1 },
-            },
-            exit: { opacity: 0, transition: { duration: 0 } },
-          }}
-        >
-          <XIcon className="h-5 w-5 text-zinc-500" />
-        </MorphingDialogClose>
-      </MorphingDialogContainer>
-    </MorphingDialog>
+    <Image
+      width={150}
+      height={80}
+      alt="Image"
+      src={src}
+      className="aspect-video w-full rounded-xl"
+    />
   );
 }
 
@@ -152,23 +111,23 @@ export default function Personal() {
           transition={TRANSITION_SECTION}
         >
           <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6">
             {projects.map((project) => (
-              <div key={project.slug} className="space-y-2">
-                <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+              <div key={project.slug} className="space-y-2  sm:flex gap-2 grid">
+                <Link href={`/projects/${project.slug}`} className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50 shrink-0 h-fit">
                   <ProjectImage src={project.image} />
-                </div>
+                </Link>
                 <div className="px-1">
-                  <a
-                    className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                    href={project.href}
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50 mb-1 "
                     target="_blank"
                     rel="noreferrer"
                   >
                     {project.title}
                     <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full" />
-                  </a>
-                  <p className="text-base text-zinc-600 dark:text-zinc-400">
+                  </Link>
+                  <p className="text-zinc-600 dark:text-zinc-400 line-clamp-3 text-sm">
                     {project.content}
                   </p>
                 </div>

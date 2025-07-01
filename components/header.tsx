@@ -16,7 +16,7 @@ export function Header() {
 					className="text-zinc-600 dark:text-zinc-500"
 					delay={0.5}
 				>
-					TypeScript Wizard
+					TypeScript & JavaScript Developer | Focused on Full-Stack Problem Solving, Open Source, and Dev Tooling
 				</TextEffect>
 			</div>
 		</header>

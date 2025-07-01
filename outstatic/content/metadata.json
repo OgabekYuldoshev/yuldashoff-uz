@@ -1,6 +1,23 @@
 {
-  "commit": "9e90faf3d3dffd4cd50dd25d65584fdbdaeae273",
-  "generated": "2025-06-27T06:35:22.095Z",
+  "commit": "62caf14bc03505075f4ef0e977a0b1e923fae61d",
+  "generated": "2025-07-01T09:23:25.513Z",
   "metadata": [
+    {
+      "__outstatic": {
+        "commit": "62caf14bc03505075f4ef0e977a0b1e923fae61d",
+        "hash": "3792029898",
+        "path": "outstatic/content/posts/typescript-da-uppercase-utility-type-ni-o-zingiz-yozib-ko-rganmisiz.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "posts",
+      "description": "TypeScript'da Uppercase<T> kabi utility type'lar bizga string tiplar ustida powerful compile-time transformatsiyalar qilish imkonini beradi.",
+      "publishedAt": "2025-07-01T09:51:33.913Z",
+      "slug": "typescript-da-uppercase-utility-type-ni-o-zingiz-yozib-ko-rganmisiz",
+      "status": "published",
+      "title": "TypeScript’da Uppercase Utility Type-ni o'zingiz yozib ko'rganmisiz?"
+    }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "commit": "accd800eafffb7f50ff094a4acb5bc5ac3d6aa9e",
-  "generated": "2025-07-01T09:58:50.062Z",
+  "commit": "4bf7527aff29eea5e3040ebcae3f39ac32418a67",
+  "generated": "2025-07-01T10:00:07.375Z",
   "metadata": [
     {
       "__outstatic": {
@@ -90,6 +90,24 @@
       "slug": "electronic-licensing-system",
       "status": "published",
       "title": "Electronic Licensing System"
+    },
+    {
+      "__outstatic": {
+        "commit": "4bf7527aff29eea5e3040ebcae3f39ac32418a67",
+        "hash": "1140544369",
+        "path": "outstatic/content/projects/quiz-gen-ai.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "href": "https://www.quizgenai.uz/",
+      "image": "/images/2025-07-01-145920_hyprshot-M5Mj.png",
+      "publishedAt": "2025-07-01T10:29:08.536Z",
+      "slug": "quiz-gen-ai",
+      "status": "published",
+      "title": "Quiz Gen Ai"
     }
   ]
 }

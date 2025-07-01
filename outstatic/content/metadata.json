@@ -1,6 +1,6 @@
 {
-  "commit": "66207b4ba793d4dc868477cfd70b9b60989cae97",
-  "generated": "2025-07-01T09:49:34.213Z",
+  "commit": "b14aab3cd0d125790abb317a095755ae535d5840",
+  "generated": "2025-07-01T09:52:04.130Z",
   "metadata": [
     {
       "__outstatic": {
@@ -36,6 +36,24 @@
       "slug": "electronic-licensing-system",
       "status": "published",
       "title": "Electronic Licensing System"
+    },
+    {
+      "__outstatic": {
+        "commit": "b14aab3cd0d125790abb317a095755ae535d5840",
+        "hash": "2717329507",
+        "path": "outstatic/content/projects/business-registration-system.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "href": "https://new.birdarcha.uz/",
+      "image": "/images/2025-07-01-145046_hyprshot-I5OT.png",
+      "publishedAt": "2025-07-01T10:21:15.320Z",
+      "slug": "business-registration-system",
+      "status": "published",
+      "title": "Business Registration System"
     }
   ]
 }

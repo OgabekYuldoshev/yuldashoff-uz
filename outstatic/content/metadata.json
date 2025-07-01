@@ -1,6 +1,6 @@
 {
-  "commit": "87331c337715dddf8b9771decbaf93fa7524c794",
-  "generated": "2025-07-01T09:58:30.763Z",
+  "commit": "0104b7ec0f6df96ddecbcb59a4b14349f8a5aac6",
+  "generated": "2025-07-01T09:58:41.942Z",
   "metadata": [
     {
       "__outstatic": {
@@ -39,24 +39,6 @@
     },
     {
       "__outstatic": {
-        "commit": "b14aab3cd0d125790abb317a095755ae535d5840",
-        "hash": "2717329507",
-        "path": "outstatic/content/projects/business-registration-system.mdx"
-      },
-      "author": {
-        "name": "Ogabek",
-        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
-      },
-      "collection": "projects",
-      "href": "https://new.birdarcha.uz/",
-      "image": "/images/2025-07-01-145046_hyprshot-I5OT.png",
-      "publishedAt": "2025-07-01T10:21:15.320Z",
-      "slug": "business-registration-system",
-      "status": "published",
-      "title": "Business Registration System"
-    },
-    {
-      "__outstatic": {
         "commit": "e959855410c0147fe7a72db2ceee42317d269a44",
         "hash": "232501862",
         "path": "outstatic/content/projects/uz-latin-cyrillic-transliterator-tool.mdx"
@@ -90,6 +72,24 @@
       "slug": "intellectual-property-system",
       "status": "published",
       "title": "Intellectual Property System"
+    },
+    {
+      "__outstatic": {
+        "commit": "0104b7ec0f6df96ddecbcb59a4b14349f8a5aac6",
+        "hash": "300831946",
+        "path": "outstatic/content/projects/business-registration-system.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "href": "https://new.birdarcha.uz/",
+      "image": "/images/2025-07-01-145046_hyprshot-I5OT.png",
+      "publishedAt": "2025-07-01T10:21:15.320Z",
+      "slug": "business-registration-system",
+      "status": "published",
+      "title": "Business Registration System"
     }
   ]
 }

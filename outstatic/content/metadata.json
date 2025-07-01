@@ -1,6 +1,6 @@
 {
-  "commit": "0104b7ec0f6df96ddecbcb59a4b14349f8a5aac6",
-  "generated": "2025-07-01T09:58:41.942Z",
+  "commit": "accd800eafffb7f50ff094a4acb5bc5ac3d6aa9e",
+  "generated": "2025-07-01T09:58:50.062Z",
   "metadata": [
     {
       "__outstatic": {
@@ -18,24 +18,6 @@
       "slug": "typescript-da-uppercase-utility-type-ni-o-zingiz-yozib-ko-rganmisiz",
       "status": "published",
       "title": "TypeScript’da Uppercase Utility Type-ni o'zingiz yozib ko'rganmisiz?"
-    },
-    {
-      "__outstatic": {
-        "commit": "66207b4ba793d4dc868477cfd70b9b60989cae97",
-        "hash": "4206151758",
-        "path": "outstatic/content/projects/electronic-licensing-system.mdx"
-      },
-      "author": {
-        "name": "Ogabek",
-        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
-      },
-      "collection": "projects",
-      "href": "https://license.gov.uz/",
-      "image": "/images/2025-07-01-144842_hyprshot-MzNz.png",
-      "publishedAt": "2025-07-01T10:15:29.711Z",
-      "slug": "electronic-licensing-system",
-      "status": "published",
-      "title": "Electronic Licensing System"
     },
     {
       "__outstatic": {
@@ -90,6 +72,24 @@
       "slug": "business-registration-system",
       "status": "published",
       "title": "Business Registration System"
+    },
+    {
+      "__outstatic": {
+        "commit": "accd800eafffb7f50ff094a4acb5bc5ac3d6aa9e",
+        "hash": "430129921",
+        "path": "outstatic/content/projects/electronic-licensing-system.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "href": "https://license.gov.uz/",
+      "image": "/images/2025-07-01-144842_hyprshot-MzNz.png",
+      "publishedAt": "2025-07-01T10:15:29.711Z",
+      "slug": "electronic-licensing-system",
+      "status": "published",
+      "title": "Electronic Licensing System"
     }
   ]
 }

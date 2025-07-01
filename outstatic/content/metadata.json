@@ -1,6 +1,6 @@
 {
-  "commit": "b854278d784a8fc9a2c56879c63df955242d5580",
-  "generated": "2025-07-01T09:54:14.380Z",
+  "commit": "e959855410c0147fe7a72db2ceee42317d269a44",
+  "generated": "2025-07-01T09:58:04.636Z",
   "metadata": [
     {
       "__outstatic": {
@@ -72,6 +72,24 @@
       "slug": "intellectual-property-system",
       "status": "published",
       "title": "Intellectual Property System"
+    },
+    {
+      "__outstatic": {
+        "commit": "e959855410c0147fe7a72db2ceee42317d269a44",
+        "hash": "232501862",
+        "path": "outstatic/content/projects/uz-latin-cyrillic-transliterator-tool.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "href": "https://www.npmjs.com/package/lycy",
+      "image": "/images/what-is-npm--and-why-do-we-need-it_-Q5NT.png",
+      "publishedAt": "2025-07-01T10:24:44.521Z",
+      "slug": "uz-latin-cyrillic-transliterator-tool",
+      "status": "published",
+      "title": "Uz Latin - Cyrillic Transliterator   Tool"
     }
   ]
 }

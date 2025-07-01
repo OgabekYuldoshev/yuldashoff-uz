@@ -1,6 +1,6 @@
 {
-  "commit": "4bf7527aff29eea5e3040ebcae3f39ac32418a67",
-  "generated": "2025-07-01T10:00:07.375Z",
+  "commit": "6a27c948e12e8d2673e1a84f84791afee9bba61b",
+  "generated": "2025-07-01T10:01:51.002Z",
   "metadata": [
     {
       "__outstatic": {
@@ -108,6 +108,24 @@
       "slug": "quiz-gen-ai",
       "status": "published",
       "title": "Quiz Gen Ai"
+    },
+    {
+      "__outstatic": {
+        "commit": "6a27c948e12e8d2673e1a84f84791afee9bba61b",
+        "hash": "865664043",
+        "path": "outstatic/content/projects/adliya-mobile.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "href": "https://my.adliya.uz/",
+      "image": "/images/2025-07-01-150127_hyprshot-c2NT.png",
+      "publishedAt": "2025-07-01T10:31:07.296Z",
+      "slug": "adliya-mobile",
+      "status": "published",
+      "title": "Adliya Mobile"
     }
   ]
 }

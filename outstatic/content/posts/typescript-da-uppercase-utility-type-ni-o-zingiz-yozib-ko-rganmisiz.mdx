@@ -15,17 +15,15 @@ TypeScript'da Uppercase&lt;T&gt; kabi utility type'lar bizga string tiplar ustid
 \
 Misol uchun, quyidagi Uppercase&lt;T&gt; implementatsiyasi stringni har bir harfini katta harfga o‘zgartiradi, lekin biz bu transformatsiyani Chars degan qo‘lda yozilgan xarita (map) orqali amalga oshiryapmiz.\
 \
-💡 Bu yerda nima bo'lyapti?\
-\
+💡 Bu yerda nima bo'lyapti?
+
 1. T string bo‘lsa, uni First va Tail deb ikkiga ajratamiz.\
-First harfni Chars map orqali tekshiramiz — agar mavjud bo‘lsa, katta harfga o‘zgartiramiz.\
-\
-2. So‘ngra rekursiv ravishda Uppercase&lt;Tail&gt; orqali qolgan qismini transformatsiya qilamiz.\
-\
-3. Stringning oxiriga yetganda (T extends ''), bo‘sh string bilan rekursiya tugaydi.\
-\
-🧠 Natijada, biz recursive conditional types va distributive string literal pattern matching orqali real Uppercase transformation yasadik!\
-\
+   First harfni Chars map orqali tekshiramiz — agar mavjud bo‘lsa, katta harfga o‘zgartiramiz.
+2. So‘ngra rekursiv ravishda Uppercase&lt;Tail&gt; orqali qolgan qismini transformatsiya qilamiz.
+3. Stringning oxiriga yetganda (T extends ''), bo‘sh string bilan rekursiya tugaydi.
+
+🧠 Natijada, biz recursive conditional types va distributive string literal pattern matching orqali real Uppercase transformation yasadik!
+
 Agar siz ham typesystemni chuqurroq tushunmoqchi bo‘lsangiz — mana shunaqa kichik eksperimenti yozib ko‘ring 👨‍💻
 
 **#typescript** **#typelevelprogramming** **#generics** **#utilitytypes** **#codewithme** **#devtips** **#softwareengineering**

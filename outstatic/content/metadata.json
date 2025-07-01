@@ -1,11 +1,11 @@
 {
-  "commit": "62caf14bc03505075f4ef0e977a0b1e923fae61d",
-  "generated": "2025-07-01T09:23:25.513Z",
+  "commit": "9eda1853d99b0c4d2623dee1d6f55bb4dcd4bf60",
+  "generated": "2025-07-01T09:25:33.870Z",
   "metadata": [
     {
       "__outstatic": {
-        "commit": "62caf14bc03505075f4ef0e977a0b1e923fae61d",
-        "hash": "3792029898",
+        "commit": "9eda1853d99b0c4d2623dee1d6f55bb4dcd4bf60",
+        "hash": "1046142738",
         "path": "outstatic/content/posts/typescript-da-uppercase-utility-type-ni-o-zingiz-yozib-ko-rganmisiz.mdx"
       },
       "author": {

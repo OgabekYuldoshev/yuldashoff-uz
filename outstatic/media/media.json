@@ -1,6 +1,6 @@
 {
-  "commit": "be5f78d2e85c56f153777834517abe21f1001a7e",
-  "generated": "2025-07-01T09:53:51.899Z",
+  "commit": "46c6826125ef9c6ce9c75eb3c42d5e59d3dc7366",
+  "generated": "2025-07-01T09:57:50.661Z",
   "media": [
     {
       "__outstatic": {
@@ -55,6 +55,17 @@
       "alt": "",
       "filename": "cover.jpg",
       "publishedAt": "2025-07-01T09:23:23.793Z",
+      "type": "image"
+    },
+    {
+      "__outstatic": {
+        "commit": "46c6826125ef9c6ce9c75eb3c42d5e59d3dc7366",
+        "hash": "1479349831",
+        "path": "public/images/what-is-npm--and-why-do-we-need-it_-Q5NT.png"
+      },
+      "alt": "",
+      "filename": "what-is-npm--and-why-do-we-need-it_-Q5NT.png",
+      "publishedAt": "2025-07-01T09:57:50.660Z",
       "type": "image"
     }
   ]

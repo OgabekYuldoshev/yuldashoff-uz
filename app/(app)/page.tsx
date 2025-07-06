@@ -200,7 +200,7 @@ export default function Personal() {
                     <h4 className="font-normal dark:text-zinc-100">
                       {post.title}
                     </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400 text-sm">
+                    <p className="text-zinc-500 dark:text-zinc-400 text-sm line-clamp-4">
                       {post.description}
                     </p>
                   </div>

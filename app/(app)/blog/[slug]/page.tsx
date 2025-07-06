@@ -34,7 +34,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <div className="flex flex-col w-full">
       <h1 className="text-xl font-bold">{post.title}</h1>
-      <i className="mb-12">{post.description}</i>
+      <i className="mb-6">{post.description}</i>
       <MdxComponent content={post.content} />
     </div>
   );

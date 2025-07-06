@@ -1,0 +1,178 @@
+---
+title: "React Core’ni yozib ko'rdim: Fiber, Hooks va Reconciliation bilan tanishuv!"
+publishedAt: "2025-07-06T08:33:05.827Z"
+status: "published"
+author:
+  name: "Ogabek"
+  picture: "https://avatars.githubusercontent.com/u/70449019?v=4"
+slug: "react-core-ni-yozib-ko-rdim-fiber-hooks-va-reconciliation-bilan-tanishuv"
+description: "React’dan muntazam foydalanaman, ammo uning ichki mexanizmlarini chuqur tushunish uchun bir kun o’zim soddalashtirilgan React clone yozib ko’rdim. Ushbu blogda createElement, render, fiber tree, reconciliation, useState, useEffect, va concurrent rendering kabi asosiy tushunchalarni qanday o’rganganim va o’zim implementatsiya qilganim bilan bo’lishaman. Agar siz ham React’ni ichkaridan tushunmoqchi bo’lsangiz — bu tajriba siz uchun ilhom bo’ladi!"
+---
+
+React bilan ancha yillardan beri do'stmiz. Ammo oxirgi paytlarda undan foydalanishdan ko’ra, qanday ishlashini tushunishga qiziqishim ortdi. Shu sababli, bugun React’ni noldan yozib ko’rdim — albatta, soddalashtirilgan shaklda. Bu tajriba menga juda ko’p narsani o’rgatdi: `Hooks`, `Fiber tree`, `Reconciliation`, va `Concurrent Rendering` qanday ishlashini endi nafaqat o’qib, balki **amalda** tushundim.
+
+Ushbu blog postda o’zim bosib o’tgan barcha asosiy bosqichlar bilan bo’lishmoqchiman.
+
+### 📦 1. JSX va `createElement` funksiyasi
+
+JSX aslida transpiler tomonidan `React.createElement` chaqiruvi bilan almashtiriladi. Shu sababli, birinchi bosqichda `createElement` funksiyasini yozdim.
+
+```typescript
+export type ElementType = {
+  tagName: string;
+  props: Record<string, any>;
+  children: ElementType[];
+};
+
+export function createElement(
+  tagName: string,
+  props: Record<string, any> | null,
+  ...children: Array<ElementType | string>
+): ElementType {
+  return Object.assign(
+    {},
+    {
+      tagName,
+      props: props ?? {},
+      children: children.map((child) =>
+        typeof child === "object" ? child : createTextElement(child)
+      ),
+    }
+  );
+}
+
+export function createTextElement(text: string): ElementType {
+  return Object.assign(
+    {},
+    {
+      tagName: "#text",
+      props: {
+        nodeValue: text,
+      },
+      children: [],
+    }
+  );
+}
+```
+
+Natijada, quyidagi JSX:
+
+```
+<div>Hello</div>
+```
+
+bundan iborat oddiy obyektga aylanadi:
+
+```json
+{
+ "tagName": "div",
+ "props": {},
+ "children": [
+   {
+     "tagName": "#text",
+     "props": { "nodeValue": "Hello" },
+     "children": []
+   }
+ ]
+}
+```
+
+manashu ko'rib turgan obyektingiz `virual dom` ham deb ataladi.
+
+### 🧱 2. `render`: Virtual DOM'dan haqiqiy DOM’ga
+
+Virtual DOM tuzib bo’lgach, uni haqiqiy DOM’ga o’tkazish kerak bo’ladi:
+
+```typescript
+function render(element: ElementType, container: HtmlElement) {
+  const dom =
+    element.tagName == "#text"
+      ? document.createTextNode("")
+      : document.createElement(element.tagName);
+
+  // Props qo‘llash
+  Object.keys(element.props || {}).forEach(key => {
+      dom[key] = element.props[key];
+  });
+
+  // Rekursiv render
+  element.children.forEach(child => {
+    render(child, dom);
+  });
+
+  container.appendChild(dom);
+}
+```
+
+Bu oddiy `render` funksiyasi orqali butun komponentlar daraxtini DOM’da ko’rsatish mumkin bo’ldi. Lekin bunda bir muammo bor. Agar sizda juda katta virual dom bo'lsa uni render qilish qimmatga tushishi mumkin. Bu bir qancha qiyinchiliklarga olib keladi, yani UI qotib qolishi mumkin, user tugmalarni bosganda ishlamay qolishi, responsivlik buzulishlari va animatsiyalar chiqmay qolishi. Buning yechimi bor `Concurrent Mode`.
+
+Concurrent Mode - bu reactdagi domni bo'laklarga bo'lib (chunk) ishlaydigan mixanizimdir (workloop). men bu jarayon uchun browserning `requestIdleCallback` apisidan fordalandim ammo odatda reactning o'zi ishlab chiqgan algorithmi bor. Bu api nima qiladi, u sizga **foydalanuvchi interfeysini band qilmasdan fon ishlarini bajarish imkonini beradi**.
+
+❗ Muhim eslatma:
+
+`requestIdleCallback` **hamma brauzerlarda ishlamaydi** (Safari-da yo‘q). Shuning uchun fallback yozish tavsiya qilinadi:
+
+```
+window.requestIdleCallback = window.requestIdleCallback || function (handler) {
+  return setTimeout(() => {
+    handler({ timeRemaining: () => 0, didTimeout: true });
+  }, 1);
+};
+```
+
+Keling concurrent mode, yani workloop qanday ishlashini koramiz.
+
+### 🌲 3. Fiber Tree va Reconciliation
+
+React har safar re-render qilganda, eski DOM’ni to’liq o’chirish o’rniga, **difference (diff)** topib, faqat kerakli joylarni yangilaydi. Bu jarayon `Reconciliation` deb ataladi.
+
+Buni optimallashtirish uchun React `Fiber Tree` degan tuzilmani qo’llaydi. Har bir node bu daraxtda `work in progress` sifatida saqlanadi.
+
+Men ham bu daraxtni yaratdim va uni `requestIdleCallback` orqali qismlarga bo’lib ishladim:
+
+```typescript
+let nextUnitOfWork = null;
+
+function workLoop(deadline) {
+  while (nextUnitOfWork && deadline.timeRemaining() > 1) {
+    nextUnitOfWork = performUnitOfWork(nextUnitOfWork);
+  }
+  requestIdleCallback(workLoop);
+}
+
+requestIdleCallback(workLoop);
+```
+
+Bu orqali **concurrent rendering** ishlash mexanizmini angladim — ya’ni browser band bo’lmaganda ishlash.
+
+## 🧪 Nima o’rgandim?
+
+Ushbu tajriba davomida quyidagi bilimlarni chuqur tushundim:
+
+- Virtual DOM qanday yaratiladi
+
+- JSX aslida nima va qanday ishlaydi
+
+- Fiber tree bilan `Reconciliation` qanday amalga oshadi
+
+- Hook’lari qanday ishlaydi
+
+- `Concurrent Mode`’ning ishlash logikasi
+
+Eng muhimi, endi React’dagi “sehrli” deb ko’rinadigan ko’p narsalar men uchun mantiqiy, tushunarli va boshqariladigan holga keldi.
+
+## ✅ Xulosa
+
+React clone yozish — bu faqatgina texnik challenge emas, balki framework’ni haqiqatan tushunishga olib boradigan yo’l. Har bir frontend developerga o’z mini-React’ini yozib ko’rishni maslahat beraman. Bu sizga nafaqat React’ni, balki umuman UI framework’lar arxitekturasini chuqurroq tushunishga yordam beradi.
+
+## 🔗 Qo’shimcha resurslar
+
+- [Build Custom React](https://github.com/OgabekYuldoshev/build-custom-react)
+
+- [Didact: Mini React Clone](https://github.com/pomber/didact)
+
+- [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
+
+## 💬 Siz ham yozib ko’rganmisiz?
+
+Agar siz ham shunaqa tajriba qilgan bo’lsangiz, izohda bo’lishing yoki o’z loyihangizni ko’rsatishingiz mumkin. Birgalikda o’rganish har doim foydali.

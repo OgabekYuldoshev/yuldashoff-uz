@@ -1,6 +1,6 @@
 {
-  "commit": "6a27c948e12e8d2673e1a84f84791afee9bba61b",
-  "generated": "2025-07-01T10:01:51.002Z",
+  "commit": "25f029137949dc5b4416f8f8b7e0e1bb507474e7",
+  "generated": "2025-07-06T08:47:37.815Z",
   "metadata": [
     {
       "__outstatic": {
@@ -126,6 +126,23 @@
       "slug": "adliya-mobile",
       "status": "published",
       "title": "Adliya Mobile"
+    },
+    {
+      "__outstatic": {
+        "commit": "25f029137949dc5b4416f8f8b7e0e1bb507474e7",
+        "hash": "2678114513",
+        "path": "outstatic/content/posts/react-core-ni-yozib-ko-rdim-fiber-hooks-va-reconciliation-bilan-tanishuv.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "posts",
+      "description": "React’dan muntazam foydalanaman, ammo uning ichki mexanizmlarini chuqur tushunish uchun bir kun o’zim soddalashtirilgan React clone yozib ko’rdim. Ushbu blogda createElement, render, fiber tree, reconciliation, useState, useEffect, va concurrent rendering kabi asosiy tushunchalarni qanday o’rganganim va o’zim implementatsiya qilganim bilan bo’lishaman. Agar siz ham React’ni ichkaridan tushunmoqchi bo’lsangiz — bu tajriba siz uchun ilhom bo’ladi!",
+      "publishedAt": "2025-07-06T08:33:05.827Z",
+      "slug": "react-core-ni-yozib-ko-rdim-fiber-hooks-va-reconciliation-bilan-tanishuv",
+      "status": "published",
+      "title": "React Core’ni yozib ko'rdim: Fiber, Hooks va Reconciliation bilan tanishuv!"
     }
   ]
 }

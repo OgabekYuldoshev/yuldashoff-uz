@@ -30,7 +30,7 @@ export function PostList({ posts }: PostListProps) {
 						className="-mx-3 rounded-xl px-3 py-3"
 					>
 						<div className="flex flex-col space-y-1">
-							<h4 className="font-normal dark:text-zinc-100">{post.title}</h4>
+							<h3 className="font-normal dark:text-zinc-100">{post.title}</h3>
 							<p className="line-clamp-4 text-sm text-zinc-500 dark:text-zinc-400">
 								{post.description}
 							</p>

@@ -8,39 +8,38 @@ import {
 
 import { getPosts } from "@/features/blog";
 import { getProjects } from "@/features/projects";
-import {
-	AnimatedContainer,
-	AnimatedSection,
-} from "@/shared/components/animated-container";
+import { Reveal } from "@/shared/components/reveal";
 
 export default async function HomePage() {
 	const [projects, posts] = await Promise.all([getProjects(), getPosts()]);
 
+	let revealIndex = 0;
+
 	return (
-		<AnimatedContainer className="space-y-24">
-			<AnimatedSection>
+		<main className="space-y-24">
+			<Reveal index={revealIndex++}>
 				<IntroSection />
-			</AnimatedSection>
+			</Reveal>
 
 			{projects.length > 0 && (
-				<AnimatedSection>
+				<Reveal index={revealIndex++}>
 					<ProjectsSection projects={projects} />
-				</AnimatedSection>
+				</Reveal>
 			)}
 
-			<AnimatedSection>
+			<Reveal index={revealIndex++}>
 				<WorkExperienceSection />
-			</AnimatedSection>
+			</Reveal>
 
 			{posts.length > 0 && (
-				<AnimatedSection>
+				<Reveal index={revealIndex++}>
 					<PostsSection posts={posts} />
-				</AnimatedSection>
+				</Reveal>
 			)}
 
-			<AnimatedSection>
+			<Reveal index={revealIndex++}>
 				<ConnectSection />
-			</AnimatedSection>
-		</AnimatedContainer>
+			</Reveal>
+		</main>
 	);
 }

@@ -16,3 +16,35 @@
 		border-color: var(--color-gray-200, currentColor);
 	}
 }
+
+@layer components {
+	/*
+	 * Staggered entrance for page sections. Implemented in CSS rather than with
+	 * Motion so the content is painted by the browser alone: a page whose JS has
+	 * not run (or has failed) still renders, and the reveal costs no JS bundle.
+	 * Order the stagger with `--reveal-index` on each element.
+	 */
+	.reveal {
+		animation: reveal 0.3s ease-out both;
+		animation-delay: calc(var(--reveal-index, 0) * 0.15s);
+	}
+}
+
+@keyframes reveal {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+		filter: blur(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		animation: none;
+	}
+}

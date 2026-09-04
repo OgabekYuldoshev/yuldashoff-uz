@@ -3,7 +3,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-	--font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+	--font-sans: var(--font-golos-text), system-ui, -apple-system, sans-serif;
 	--font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 	--font-serif: Georgia, serif;
 	--radius: 0.6rem;
@@ -158,7 +158,7 @@
 	--sidebar-accent-foreground: oklch(0.2235 0.0049 145.4099);
 	--sidebar-border: oklch(0.9247 0.0103 145.4919);
 	--sidebar-ring: oklch(0.4731 0.045 149.2237);
-	--font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+	--font-sans: var(--font-golos-text), system-ui, -apple-system, sans-serif;
 	--font-serif: Georgia, serif;
 	--font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 	--shadow-color: #000000;
@@ -219,7 +219,7 @@
 	--sidebar-accent-foreground: oklch(1.0 0 0);
 	--sidebar-border: oklch(0.235 0 0);
 	--sidebar-ring: oklch(0.5017 0.0487 151.7958);
-	--font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+	--font-sans: var(--font-golos-text), system-ui, -apple-system, sans-serif;
 	--font-serif: Georgia, serif;
 	--font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 	--shadow-color: #000000;

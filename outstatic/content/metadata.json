@@ -149,6 +149,25 @@
       "slug": "react-core-ni-yozib-ko-rdim-fiber-hooks-va-reconciliation-bilan-tanishuv",
       "status": "published",
       "title": "React Core\u2019ni yozib ko'rdim: Fiber, Hooks va Reconciliation bilan tanishuv!"
+    },
+    {
+      "__outstatic": {
+        "commit": "25f029137949dc5b4416f8f8b7e0e1bb507474e7",
+        "hash": "3382460525",
+        "path": "outstatic/content/projects/storage-transfer.mdx"
+      },
+      "author": {
+        "name": "Ogabek",
+        "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
+      },
+      "collection": "projects",
+      "description": "A Chrome extension that moves localStorage, sessionStorage and cookies between browser tabs \u2014 copy an auth session from production straight into localhost.",
+      "href": "https://github.com/OgabekYuldoshev/storage-transfer",
+      "image": "/images/cover.jpg",
+      "publishedAt": "2026-09-04T10:00:00.000Z",
+      "slug": "storage-transfer",
+      "status": "published",
+      "title": "Storage Transfer"
     }
   ]
 }

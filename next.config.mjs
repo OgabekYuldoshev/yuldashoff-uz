@@ -15,6 +15,16 @@ const nextConfig = {
 		"/blog/[slug]": ["./outstatic/**/*"],
 		"/projects/[slug]": ["./outstatic/**/*"],
 		"/sitemap.xml": ["./outstatic/**/*"],
+		// The social cards read the Golos Text files from disk at render time.
+		"/opengraph-image": ["./src/assets/fonts/**/*"],
+		"/blog/[slug]/opengraph-image": [
+			"./outstatic/**/*",
+			"./src/assets/fonts/**/*",
+		],
+		"/projects/[slug]/opengraph-image": [
+			"./outstatic/**/*",
+			"./src/assets/fonts/**/*",
+		],
 	},
 };
 

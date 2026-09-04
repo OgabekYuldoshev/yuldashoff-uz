@@ -76,6 +76,23 @@ tokens (`bg-background`, `text-muted-foreground`, `border`, `bg-primary`, …)
 rather than palette classes, so both light and dark modes follow the theme and
 swapping it is a one-file change.
 
+## SEO & Icons
+
+Everything search engines and social cards need is generated from `SITE_CONFIG`:
+
+- **Metadata** — canonical URLs, `robots`/`googlebot` directives, keywords, author
+  and per-page Open Graph / Twitter tags via the Metadata API.
+- **Social cards** — one layout in `src/shared/lib/og-image.tsx`, rendered by
+  `next/og` into `opengraph-image` routes for the site, every post and every
+  project. Nothing to design by hand when content is added.
+- **Structured data** — `Person`, `WebSite`, `BlogPosting`, `CreativeWork` and
+  `BreadcrumbList` JSON-LD from `src/shared/lib/structured-data.ts`.
+- **Feeds** — `/sitemap.xml`, `/robots.txt` and an RSS feed at `/blog/rss.xml`.
+- **Icons** — `icon.svg`, a multi-size `favicon.ico`, `apple-icon.png` and the
+  PWA icons in `manifest.webmanifest`, all drawn from the theme's primary green.
+  Regenerate the raster ones with the script in the commit that added them if the
+  mark ever changes.
+
 Markdown code blocks are highlighted at render time by `rehype-highlight`; the
 token colours are their own `--code-*` variables in `globals.css`, so they flip
 with the theme and cost no client-side JavaScript.

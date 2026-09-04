@@ -22,7 +22,7 @@ export function SiteHeader() {
 					<div className="min-w-0">
 						<Link
 							href="/"
-							className="font-medium transition-colors hover:text-primary"
+							className="font-semibold tracking-tight transition-colors hover:text-primary"
 						>
 							{SITE_CONFIG.name}
 						</Link>

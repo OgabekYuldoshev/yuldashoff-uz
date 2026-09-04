@@ -1,0 +1,63 @@
+---
+title: "Storage Transfer"
+publishedAt: "2026-09-04T10:00:00.000Z"
+status: "published"
+author:
+  name: "Ogabek"
+  picture: "https://avatars.githubusercontent.com/u/70449019?v=4"
+slug: "storage-transfer"
+description: "A Chrome extension that moves localStorage, sessionStorage and cookies between browser tabs — copy an auth session from production straight into localhost."
+image: "/images/cover.jpg"
+href: "https://github.com/OgabekYuldoshev/storage-transfer"
+---
+
+Storage Transfer is a Chrome extension built for the part of development nobody enjoys: getting a real session into your local environment. Instead of logging in again on `localhost`, hand-copying tokens out of DevTools, or writing throwaway scripts, you pick the storage entries you need in one tab and push them into another — across domains, ports and environments.
+
+## The problem it solves
+
+Debugging an issue that only reproduces for a logged-in user usually means reconstructing that user's state by hand. Auth tokens live in `localStorage`, feature flags in `sessionStorage`, and the session itself in an `httpOnly` cookie that DevTools will let you read but not faithfully recreate. Copying those by hand is slow and easy to get wrong — a missing `sameSite` or `domain` attribute is enough for the session to be silently rejected.
+
+Storage Transfer makes that a six-click operation and preserves every attribute along the way.
+
+## Features
+
+- **All three storage types** — `localStorage`, `sessionStorage` and cookies, each in its own tab in the popup.
+- **Selective transfer** — check only the keys you want. Nothing else in the destination tab is touched.
+- **Full cookie fidelity** — `domain`, `path`, `secure`, `httpOnly`, `sameSite` and expiration all survive the transfer, so the destination sees the same cookie the origin did.
+- **Smart destination picker** — the tab list is searchable and sorted so `localhost` and dev domains surface first, instead of being buried under thirty open tabs.
+- **Scoped to real pages** — the extension only acts on `http://` and `https://` tabs.
+
+## How it works
+
+The popup reads the active tab's storage through the `scripting` API and the browser's cookie store, shows you what is there, and then writes the selected subset into the tab you choose. Cookies go through the `cookies` API so their attributes are set properly rather than serialised into a `document.cookie` string that would drop `httpOnly`.
+
+Everything stays on the machine: there is no backend, no analytics and no telemetry. Nothing about the transferred data leaves the browser.
+
+## Tech stack
+
+Manifest V3, TypeScript and React 19 for the popup, bundled by Vite with `@crxjs/vite-plugin`. Styling is Tailwind CSS v4 with shadcn/ui, and the whole thing runs on Bun.
+
+## Running it locally
+
+```bash
+bun install
+bun run dev    # HMR while developing
+bun run build  # production bundle into dist/
+```
+
+Then open `chrome://extensions/`, turn on developer mode, and load `dist/` as an unpacked extension.
+
+## Usage
+
+1. Open the tab that holds the data you want.
+2. Click the extension icon.
+3. Pick a storage type — Local, Session or Cookies.
+4. Check the items to transfer.
+5. Search for and select the destination tab.
+6. Hit **Transfer**.
+
+## Permissions
+
+Three permissions, all of them load-bearing: `cookies` for reading and writing the cookie store, `scripting` for reaching into a page's storage, and the `<all_urls>` host permission because the whole point is moving data between different origins.
+
+Source is on GitHub under the MIT license.

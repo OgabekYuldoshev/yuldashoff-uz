@@ -32,7 +32,9 @@ export function SiteNav() {
 						size="sm"
 						className={cn(
 							"text-muted-foreground",
-							current && "bg-accent text-accent-foreground",
+							// `accent` is nearly identical to `background` in light mode, so
+							// the current page is marked with `secondary` instead.
+							current && "bg-secondary text-secondary-foreground",
 						)}
 					>
 						<Link href={item.href} aria-current={current ? "page" : undefined}>

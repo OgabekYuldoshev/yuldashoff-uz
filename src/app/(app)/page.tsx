@@ -22,22 +22,22 @@ export default async function HomePage() {
 			</Reveal>
 
 			{projects.length > 0 && (
-				<Reveal index={revealIndex++}>
+				<Reveal id="projects" index={revealIndex++}>
 					<ProjectsSection projects={projects} />
 				</Reveal>
 			)}
 
-			<Reveal index={revealIndex++}>
+			<Reveal id="experience" index={revealIndex++}>
 				<WorkExperienceSection />
 			</Reveal>
 
 			{posts.length > 0 && (
-				<Reveal index={revealIndex++}>
+				<Reveal id="blog" index={revealIndex++}>
 					<PostsSection posts={posts} />
 				</Reveal>
 			)}
 
-			<Reveal index={revealIndex++}>
+			<Reveal id="connect" index={revealIndex++}>
 				<ConnectSection />
 			</Reveal>
 		</main>

@@ -6,5 +6,5 @@ export const SITE_CONFIG = {
 		"TypeScript & JavaScript Developer | Focused on Full-Stack Problem Solving, Open Source, and Dev Tooling",
 	url: "https://yuldashoff.uz",
 	email: "yuldashoff1@gmail.com",
-	repository: "https://github.com/ibelick/nim",
+	repository: "https://github.com/OgabekYuldoshev/o27-dev",
 } as const;

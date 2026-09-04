@@ -34,12 +34,12 @@ export function ThemeSwitch() {
 	}, []);
 
 	if (!isMounted) {
-		// Reserve the control's footprint so the footer does not shift on hydration.
-		return <div className="h-9 w-27" aria-hidden />;
+		// Reserve the control's footprint so the header does not shift on hydration.
+		return <div className="h-9 w-27 shrink-0" aria-hidden />;
 	}
 
 	return (
-		<div className="flex items-center">
+		<div className="flex shrink-0 items-center">
 			<AnimatedBackground
 				className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
 				defaultValue={theme}

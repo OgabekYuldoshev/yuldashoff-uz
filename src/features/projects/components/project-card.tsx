@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 					<span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-zinc-50" />
 				</span>
 				<p className="line-clamp-3 text-sm text-zinc-600 dark:text-zinc-400">
-					{project.content}
+					{project.description}
 				</p>
 			</div>
 		</Link>

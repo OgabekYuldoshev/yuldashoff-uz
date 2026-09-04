@@ -4,7 +4,8 @@ export type WorkExperience = {
 	title: string;
 	start: string;
 	end: string;
-	href: string;
+	/** Company website. Omit when there is none — the entry then renders unlinked. */
+	href?: string;
 };
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
@@ -30,6 +31,5 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 		title: "Front-end Developer",
 		start: "2020",
 		end: "2021",
-		href: "#",
 	},
 ];

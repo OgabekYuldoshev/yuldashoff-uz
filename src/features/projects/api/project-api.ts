@@ -6,7 +6,7 @@ const PROJECTS_COLLECTION = "projects";
 
 const PROJECT_SUMMARY_FIELDS = [
 	"title",
-	"content",
+	"description",
 	"slug",
 	"publishedAt",
 	"image",
@@ -15,6 +15,7 @@ const PROJECT_SUMMARY_FIELDS = [
 
 const PROJECT_DETAIL_FIELDS = [
 	"title",
+	"description",
 	"publishedAt",
 	"slug",
 	"content",

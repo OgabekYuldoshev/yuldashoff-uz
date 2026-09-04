@@ -2,6 +2,12 @@
   "title": "projects",
   "type": "object",
   "properties": {
+    "description": {
+      "required": true,
+      "fieldType": "Text",
+      "dataType": "string",
+      "title": "Description"
+    },
     "image": {
       "required": true,
       "fieldType": "Image",

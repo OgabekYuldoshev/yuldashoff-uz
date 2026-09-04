@@ -17,7 +17,7 @@
       "publishedAt": "2025-07-01T09:51:33.913Z",
       "slug": "typescript-da-uppercase-utility-type-ni-o-zingiz-yozib-ko-rganmisiz",
       "status": "published",
-      "title": "TypeScript’da Uppercase Utility Type-ni o'zingiz yozib ko'rganmisiz?"
+      "title": "TypeScript\u2019da Uppercase Utility Type-ni o'zingiz yozib ko'rganmisiz?"
     },
     {
       "__outstatic": {
@@ -35,7 +35,8 @@
       "publishedAt": "2025-07-01T10:24:44.521Z",
       "slug": "uz-latin-cyrillic-transliterator-tool",
       "status": "published",
-      "title": "Uz Latin - Cyrillic Transliterator   Tool"
+      "title": "Uz Latin - Cyrillic Transliterator Tool",
+      "description": "Tools for transliterating Uzbek words and texts between the Latin and Cyrillic alphabets."
     },
     {
       "__outstatic": {
@@ -53,7 +54,8 @@
       "publishedAt": "2025-07-01T10:22:22.419Z",
       "slug": "intellectual-property-system",
       "status": "published",
-      "title": "Intellectual Property System"
+      "title": "Intellectual Property System",
+      "description": "Buy your own industrial property \u2014 a trademark or an invention \u2014 and use related services."
     },
     {
       "__outstatic": {
@@ -71,7 +73,8 @@
       "publishedAt": "2025-07-01T10:21:15.320Z",
       "slug": "business-registration-system",
       "status": "published",
-      "title": "Business Registration System"
+      "title": "Business Registration System",
+      "description": "Register your personal business with the state and start your activity."
     },
     {
       "__outstatic": {
@@ -89,7 +92,8 @@
       "publishedAt": "2025-07-01T10:15:29.711Z",
       "slug": "electronic-licensing-system",
       "status": "published",
-      "title": "Electronic Licensing System"
+      "title": "Electronic Licensing System",
+      "description": "Obtain a license or permit for any of about 200 different government services."
     },
     {
       "__outstatic": {
@@ -107,7 +111,8 @@
       "publishedAt": "2025-07-01T10:29:08.536Z",
       "slug": "quiz-gen-ai",
       "status": "published",
-      "title": "Quiz Gen Ai"
+      "title": "Quiz Gen Ai",
+      "description": "An AI platform that turns PDF, DOCX or TXT files into personalized quizzes and tests."
     },
     {
       "__outstatic": {
@@ -125,7 +130,8 @@
       "publishedAt": "2025-07-01T10:31:07.296Z",
       "slug": "adliya-mobile",
       "status": "published",
-      "title": "Adliya Mobile"
+      "title": "Adliya Mobile",
+      "description": "The Adliya Mobile app is a powerful tool designed to bring justice to your fingertips."
     },
     {
       "__outstatic": {
@@ -138,11 +144,11 @@
         "picture": "https://avatars.githubusercontent.com/u/70449019?v=4"
       },
       "collection": "posts",
-      "description": "React’dan muntazam foydalanaman, ammo uning ichki mexanizmlarini chuqur tushunish uchun bir kun o’zim soddalashtirilgan React clone yozib ko’rdim. Ushbu blogda createElement, render, fiber tree, reconciliation, useState, useEffect, va concurrent rendering kabi asosiy tushunchalarni qanday o’rganganim va o’zim implementatsiya qilganim bilan bo’lishaman. Agar siz ham React’ni ichkaridan tushunmoqchi bo’lsangiz — bu tajriba siz uchun ilhom bo’ladi!",
+      "description": "React\u2019dan muntazam foydalanaman, ammo uning ichki mexanizmlarini chuqur tushunish uchun bir kun o\u2019zim soddalashtirilgan React clone yozib ko\u2019rdim. Ushbu blogda createElement, render, fiber tree, reconciliation, useState, useEffect, va concurrent rendering kabi asosiy tushunchalarni qanday o\u2019rganganim va o\u2019zim implementatsiya qilganim bilan bo\u2019lishaman. Agar siz ham React\u2019ni ichkaridan tushunmoqchi bo\u2019lsangiz \u2014 bu tajriba siz uchun ilhom bo\u2019ladi!",
       "publishedAt": "2025-07-06T08:33:05.827Z",
       "slug": "react-core-ni-yozib-ko-rdim-fiber-hooks-va-reconciliation-bilan-tanishuv",
       "status": "published",
-      "title": "React Core’ni yozib ko'rdim: Fiber, Hooks va Reconciliation bilan tanishuv!"
+      "title": "React Core\u2019ni yozib ko'rdim: Fiber, Hooks va Reconciliation bilan tanishuv!"
     }
   ]
 }

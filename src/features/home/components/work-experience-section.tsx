@@ -23,7 +23,7 @@ export function WorkExperienceSection() {
 							size={SPOTLIGHT_SIZE}
 						/>
 						<div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-							<div className="relative flex w-full flex-row justify-between">
+							<div className="relative flex w-full flex-col gap-1 sm:flex-row sm:justify-between sm:gap-4">
 								<div>
 									<h3 className="font-normal dark:text-zinc-100">
 										{job.title}
@@ -32,7 +32,7 @@ export function WorkExperienceSection() {
 										{job.company}
 									</p>
 								</div>
-								<p className="text-sm text-zinc-600 dark:text-zinc-400">
+								<p className="shrink-0 text-sm whitespace-nowrap text-zinc-600 dark:text-zinc-400">
 									{job.start} - {job.end}
 								</p>
 							</div>

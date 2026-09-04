@@ -34,32 +34,35 @@ export function ThemeSwitch() {
 	}, []);
 
 	if (!isMounted) {
-		return null;
+		// Reserve the control's footprint so the footer does not shift on hydration.
+		return <div className="h-9 w-27" aria-hidden />;
 	}
 
 	return (
-		<AnimatedBackground
-			className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
-			defaultValue={theme}
-			transition={{
-				type: "spring",
-				bounce: 0,
-				duration: 0.2,
-			}}
-			enableHover={false}
-			onValueChange={(id) => setTheme(id as string)}
-		>
-			{THEME_OPTIONS.map((option) => (
-				<button
-					key={option.id}
-					type="button"
-					className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
-					aria-label={`Switch to ${option.label} theme`}
-					data-id={option.id}
-				>
-					{option.icon}
-				</button>
-			))}
-		</AnimatedBackground>
+		<div className="flex items-center">
+			<AnimatedBackground
+				className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
+				defaultValue={theme}
+				transition={{
+					type: "spring",
+					bounce: 0,
+					duration: 0.2,
+				}}
+				enableHover={false}
+				onValueChange={(id) => setTheme(id as string)}
+			>
+				{THEME_OPTIONS.map((option) => (
+					<button
+						key={option.id}
+						type="button"
+						className="inline-flex h-9 w-9 items-center justify-center text-zinc-500 transition-colors duration-100 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
+						aria-label={`Switch to ${option.label} theme`}
+						data-id={option.id}
+					>
+						{option.icon}
+					</button>
+				))}
+			</AnimatedBackground>
+		</div>
 	);
 }

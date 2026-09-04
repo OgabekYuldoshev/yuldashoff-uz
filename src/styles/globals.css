@@ -15,6 +15,16 @@
 	::file-selector-button {
 		border-color: var(--color-gray-200, currentColor);
 	}
+
+	/* One keyboard focus ring for the whole site, legible on either theme. */
+	:focus-visible {
+		outline: 2px solid var(--color-zinc-900);
+		outline-offset: 2px;
+	}
+
+	.dark :focus-visible {
+		outline-color: var(--color-zinc-100);
+	}
 }
 
 @layer components {

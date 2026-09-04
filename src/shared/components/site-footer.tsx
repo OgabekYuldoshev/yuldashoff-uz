@@ -13,16 +13,14 @@ export function SiteFooter() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<TextLoop className="text-xs text-zinc-500">
+					<TextLoop className="text-xs text-zinc-500 dark:text-zinc-400">
 						<span>
 							© {new Date().getFullYear()} {SITE_CONFIG.name}.
 						</span>
 						<span>{SITE_CONFIG.description}</span>
 					</TextLoop>
 				</a>
-				<div className="text-xs text-zinc-400">
-					<ThemeSwitch />
-				</div>
+				<ThemeSwitch />
 			</div>
 		</footer>
 	);

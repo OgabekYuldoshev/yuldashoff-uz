@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import { AnimatedBackground } from "@/shared/ui/animated-background";
+import { formatDate } from "@/shared/utils/format-date";
 
 import type { Post } from "../types/post";
 
@@ -30,6 +31,12 @@ export function PostList({ posts }: PostListProps) {
 						className="-mx-3 rounded-xl px-3 py-3"
 					>
 						<div className="flex flex-col space-y-1">
+							<time
+								dateTime={post.publishedAt}
+								className="text-xs text-zinc-500 dark:text-zinc-400"
+							>
+								{formatDate(post.publishedAt)}
+							</time>
 							<h3 className="font-normal dark:text-zinc-100">{post.title}</h3>
 							<p className="line-clamp-4 text-sm text-zinc-500 dark:text-zinc-400">
 								{post.description}

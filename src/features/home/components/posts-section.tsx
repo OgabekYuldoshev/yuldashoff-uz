@@ -1,7 +1,8 @@
-import { PostList } from "@/features/blog";
 import type { Post } from "@/features/blog";
+import { PostList } from "@/features/blog";
 
 import { SectionHeading } from "./section-heading";
+import { ViewAllLink } from "./view-all-link";
 
 type PostsSectionProps = {
 	posts: Post[];
@@ -10,7 +11,9 @@ type PostsSectionProps = {
 export function PostsSection({ posts }: PostsSectionProps) {
 	return (
 		<>
-			<SectionHeading>Blog</SectionHeading>
+			<SectionHeading action={<ViewAllLink href="/blog" label="All posts" />}>
+				Blog
+			</SectionHeading>
 			<PostList posts={posts} />
 		</>
 	);

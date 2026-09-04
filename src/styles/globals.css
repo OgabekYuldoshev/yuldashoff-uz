@@ -262,3 +262,90 @@
 	--tw-prose-th-borders: var(--color-border);
 	--tw-prose-td-borders: var(--color-border);
 }
+
+/*
+ * Syntax colours for `rehype-highlight` output. Defined as their own tokens so
+ * the palette flips with the theme; hues are kept close to the green theme while
+ * staying far enough apart to be distinguishable in code.
+ */
+:root {
+	--code-comment: oklch(0.55 0.012 145);
+	--code-keyword: oklch(0.47 0.11 300);
+	--code-string: oklch(0.45 0.09 150);
+	--code-number: oklch(0.5 0.11 60);
+	--code-function: oklch(0.48 0.11 250);
+	--code-type: oklch(0.49 0.08 200);
+	--code-punctuation: oklch(0.45 0.012 145);
+}
+
+.dark {
+	--code-comment: oklch(0.6 0.012 145);
+	--code-keyword: oklch(0.78 0.11 300);
+	--code-string: oklch(0.78 0.1 150);
+	--code-number: oklch(0.82 0.1 70);
+	--code-function: oklch(0.78 0.1 250);
+	--code-type: oklch(0.8 0.07 200);
+	--code-punctuation: oklch(0.68 0.012 145);
+}
+
+.hljs-comment,
+.hljs-quote {
+	color: var(--code-comment);
+	font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-meta .hljs-keyword {
+	color: var(--code-keyword);
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+	color: var(--code-string);
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+	color: var(--code-number);
+}
+
+.hljs-title,
+.hljs-title.function_,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+	color: var(--code-function);
+}
+
+.hljs-type,
+.hljs-class .hljs-title,
+.hljs-built_in,
+.hljs-params,
+.hljs-attr,
+.hljs-variable,
+.hljs-property,
+.hljs-template-variable {
+	color: var(--code-type);
+}
+
+.hljs-punctuation,
+.hljs-operator,
+.hljs-meta,
+.hljs-deletion {
+	color: var(--code-punctuation);
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: 600;
+}

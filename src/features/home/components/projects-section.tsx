@@ -1,7 +1,8 @@
-import { ProjectList } from "@/features/projects";
 import type { Project } from "@/features/projects";
+import { ProjectList } from "@/features/projects";
 
 import { SectionHeading } from "./section-heading";
+import { ViewAllLink } from "./view-all-link";
 
 type ProjectsSectionProps = {
 	projects: Project[];
@@ -10,7 +11,11 @@ type ProjectsSectionProps = {
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
 	return (
 		<>
-			<SectionHeading>Selected Projects</SectionHeading>
+			<SectionHeading
+				action={<ViewAllLink href="/projects" label="All projects" />}
+			>
+				Selected Projects
+			</SectionHeading>
 			<ProjectList projects={projects} />
 		</>
 	);

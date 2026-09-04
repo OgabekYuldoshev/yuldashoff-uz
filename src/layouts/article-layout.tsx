@@ -6,8 +6,18 @@ import { CopyUrlButton } from "@/shared/components/copy-url-button";
 import { Button } from "@/shared/ui/button";
 import { ScrollProgress } from "@/shared/ui/scroll-progress";
 
+type ArticleLayoutProps = PropsWithChildren<{
+	/** Index page this article belongs to. */
+	backHref: string;
+	backLabel: string;
+}>;
+
 /** Reading shell shared by blog posts and project write-ups. */
-export function ArticleLayout({ children }: PropsWithChildren) {
+export function ArticleLayout({
+	children,
+	backHref,
+	backLabel,
+}: ArticleLayoutProps) {
 	return (
 		<>
 			<div className="pointer-events-none fixed top-0 left-0 z-10 h-12 w-full bg-background backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)]" />
@@ -18,9 +28,9 @@ export function ArticleLayout({ children }: PropsWithChildren) {
 
 			<div className="flex items-center justify-between">
 				<Button asChild variant="ghost" size="sm" className="-ml-2">
-					<Link href="/">
+					<Link href={backHref}>
 						<ArrowLeft aria-hidden />
-						Back
+						{backLabel}
 					</Link>
 				</Button>
 				<CopyUrlButton />

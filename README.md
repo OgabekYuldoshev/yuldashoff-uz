@@ -30,8 +30,8 @@ The application follows a feature-based architecture. All source lives under
 src/
 ├── app/                     # Next.js App Router — routing only, thin wrappers
 │   ├── (app)/               # Public site
-│   │   ├── blog/[slug]/
-│   │   ├── projects/[slug]/
+│   │   ├── blog/            # index + [slug]/ (own article layout)
+│   │   ├── projects/        # index + [slug]/ (own article layout)
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── (cms)/               # Outstatic dashboard
@@ -75,6 +75,10 @@ Colour, radius, shadow and typography come from a single set of CSS variables in
 tokens (`bg-background`, `text-muted-foreground`, `border`, `bg-primary`, …)
 rather than palette classes, so both light and dark modes follow the theme and
 swapping it is a one-file change.
+
+Markdown code blocks are highlighted at render time by `rehype-highlight`; the
+token colours are their own `--code-*` variables in `globals.css`, so they flip
+with the theme and cost no client-side JavaScript.
 
 `components.json` configures the shadcn CLI for this layout: new components land
 in `src/shared/ui/` and import `cn` from the `cn` package.

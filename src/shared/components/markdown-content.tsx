@@ -1,6 +1,7 @@
-import Markdown, { type Components } from "react-markdown";
-
 import { cn } from "cn";
+import type { ComponentProps } from "react";
+import Markdown, { type Components } from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
 
 /**
  * Element styling comes from `@tailwindcss/typography` (the `prose` classes on
@@ -21,6 +22,8 @@ const MARKDOWN_COMPONENTS: Components = {
 			/\blanguage-/.test(className ?? "") || String(children).includes("\n");
 
 		if (isBlock) {
+			// Highlight token classes live on this element and its descendants;
+			// the colours are defined in `globals.css`.
 			return (
 				<code {...props} className={className}>
 					{children}
@@ -33,7 +36,7 @@ const MARKDOWN_COMPONENTS: Components = {
 				{...props}
 				className={cn(
 					className,
-					"rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-[0.875em] text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100",
+					"rounded bg-muted px-1.5 py-0.5 font-mono text-[0.875em] text-foreground",
 				)}
 			>
 				{children}
@@ -42,11 +45,21 @@ const MARKDOWN_COMPONENTS: Components = {
 	},
 };
 
+// `detect: false` keeps highlighting to fences that declare a language, so a
+// plain ``` block is left as unstyled monospace instead of being guessed at.
+const REHYPE_PLUGINS: ComponentProps<typeof Markdown>["rehypePlugins"] = [
+	[rehypeHighlight, { detect: false }],
+];
+
 type MarkdownContentProps = {
 	content: string;
 };
 
 /** Renders CMS markdown with the site's typography. */
 export function MarkdownContent({ content }: MarkdownContentProps) {
-	return <Markdown components={MARKDOWN_COMPONENTS}>{content}</Markdown>;
+	return (
+		<Markdown components={MARKDOWN_COMPONENTS} rehypePlugins={REHYPE_PLUGINS}>
+			{content}
+		</Markdown>
+	);
 }

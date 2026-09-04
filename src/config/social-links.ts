@@ -10,7 +10,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 	},
 	{
 		label: "Telegram",
-		href: "https://t.me/ogabek_yuldashoff",
+		href: "https://t.me/o27_dev",
 	},
 	{
 		label: "LinkedIn",
@@ -18,6 +18,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
 	},
 	{
 		label: "Instagram",
-		href: "https://www.instagram.com/ogabek_yuldashoff",
+		href: "https://www.instagram.com/o27.dev",
 	},
 ];

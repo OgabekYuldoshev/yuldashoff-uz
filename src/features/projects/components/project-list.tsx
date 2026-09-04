@@ -8,7 +8,7 @@ type ProjectListProps = {
 
 export function ProjectList({ projects }: ProjectListProps) {
 	return (
-		<div className="grid grid-cols-1 gap-6">
+		<div className="flex flex-col gap-3">
 			{projects.map((project) => (
 				<ProjectCard key={project.slug} project={project} />
 			))}

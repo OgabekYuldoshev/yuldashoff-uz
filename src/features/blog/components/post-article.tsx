@@ -12,19 +12,17 @@ export function PostArticle({ post }: PostArticleProps) {
 		<article className="flex w-full flex-col">
 			{/* `not-prose` keeps the typography plugin off the page header so its
 			    sizes and spacing are set here rather than by prose defaults. */}
-			<header className="not-prose mb-8">
-				<h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-					{post.title}
-				</h1>
+			<header className="not-prose mb-10">
 				<time
 					dateTime={post.publishedAt}
-					className="mt-2 block text-sm text-zinc-500 dark:text-zinc-400"
+					className="text-sm text-muted-foreground"
 				>
 					{formatDate(post.publishedAt)}
 				</time>
-				<p className="mt-4 text-zinc-600 dark:text-zinc-400">
-					{post.description}
-				</p>
+				<h1 className="mt-2 text-3xl font-semibold tracking-tight text-balance">
+					{post.title}
+				</h1>
+				<p className="mt-4 text-lg text-muted-foreground">{post.description}</p>
 			</header>
 			<MarkdownContent content={post.content} />
 		</article>

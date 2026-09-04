@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/shared/utils/cn";
+import { cn } from "cn";
 import {
 	AnimatePresence,
 	type AnimatePresenceProps,

@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/shared/utils/cn";
+import { cn } from "cn";
 import {
 	AnimatePresence,
 	type Transition,
@@ -30,18 +30,15 @@ export function TextMorph({
 	const characters = useMemo(() => {
 		const charCounts: Record<string, number> = {};
 
-		return children.split("").map((char, index) => {
+		return children.split("").map((char) => {
 			const lowerChar = char.toLowerCase();
 			charCounts[lowerChar] = (charCounts[lowerChar] || 0) + 1;
 
 			return {
+				// Counting case-insensitively keeps a character's identity stable when
+				// only its case changes, so it morphs instead of being replaced.
 				id: `${uniqueId}-${lowerChar}${charCounts[lowerChar]}`,
-				label:
-					char === " "
-						? "\u00A0"
-						: index === 0
-							? char.toUpperCase()
-							: lowerChar,
+				label: char === " " ? "\u00A0" : char,
 			};
 		});
 	}, [children, uniqueId]);

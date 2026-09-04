@@ -7,7 +7,7 @@ export function WorkExperienceSection() {
 	return (
 		<>
 			<SectionHeading>Work Experience</SectionHeading>
-			<div className="flex flex-col space-y-2">
+			<div className="flex flex-col gap-3">
 				{WORK_EXPERIENCE.map((job) => (
 					<WorkExperienceCard key={job.id} job={job} />
 				))}

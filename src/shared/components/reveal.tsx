@@ -1,6 +1,6 @@
 import type { CSSProperties, PropsWithChildren } from "react";
 
-import { cn } from "@/shared/utils/cn";
+import { cn } from "cn";
 
 type RevealProps = PropsWithChildren<{
 	/** Anchor target, so sections can be linked to directly (e.g. `/#blog`). */

@@ -1,7 +1,9 @@
 "use client";
 
+import { CheckIcon, LinkIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { Button } from "@/shared/ui/button";
 import { TextMorph } from "@/shared/ui/text-morph";
 
 const COPY_FEEDBACK_DURATION_MS = 2000;
@@ -28,13 +30,15 @@ export function CopyUrlButton() {
 	}
 
 	return (
-		<button
+		<Button
 			type="button"
+			variant="ghost"
+			size="sm"
 			onClick={handleCopy}
-			className="font-base flex items-center gap-1 text-center text-sm text-zinc-500 transition-colors dark:text-zinc-400"
+			className="-mr-2 text-muted-foreground"
 		>
-			<TextMorph>{isCopied ? "Copied" : "Copy"}</TextMorph>
-			<span>URL</span>
-		</button>
+			{isCopied ? <CheckIcon aria-hidden /> : <LinkIcon aria-hidden />}
+			<TextMorph>{isCopied ? "Copied" : "Copy URL"}</TextMorph>
+		</Button>
 	);
 }

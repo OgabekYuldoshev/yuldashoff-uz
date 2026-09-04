@@ -1,6 +1,6 @@
 import Markdown, { type Components } from "react-markdown";
 
-import { cn } from "@/shared/utils/cn";
+import { cn } from "cn";
 
 /**
  * Element styling comes from `@tailwindcss/typography` (the `prose` classes on

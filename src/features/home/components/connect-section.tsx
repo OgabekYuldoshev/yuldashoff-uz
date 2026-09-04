@@ -8,10 +8,10 @@ export function ConnectSection() {
 	return (
 		<>
 			<SectionHeading>Connect</SectionHeading>
-			<p className="mb-5 text-zinc-600 dark:text-zinc-400">
+			<p className="mb-5 text-muted-foreground">
 				Feel free to contact me at{" "}
 				<a
-					className="underline dark:text-zinc-300"
+					className="text-primary underline underline-offset-4 transition-opacity hover:opacity-80"
 					href={`mailto:${SITE_CONFIG.email}`}
 				>
 					{SITE_CONFIG.email}

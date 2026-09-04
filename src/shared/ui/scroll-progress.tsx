@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/shared/utils/cn";
+import { cn } from "cn";
 import { type SpringOptions, motion, useScroll, useSpring } from "motion/react";
 import type { RefObject } from "react";
 

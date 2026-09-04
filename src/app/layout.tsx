@@ -1,25 +1,29 @@
 import "@/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import type { PropsWithChildren } from "react";
 
 import { SITE_CONFIG } from "@/config/site-config";
 
-const geist = Geist({
-	variable: "--font-geist",
+// Families named by the design theme, self-hosted through next/font.
+const inter = Inter({
+	variable: "--font-inter",
 	subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+	variable: "--font-jetbrains-mono",
 	subsets: ["latin"],
 });
 
 export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
-	themeColor: "#ffffff",
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "#f5f6f5" },
+		{ media: "(prefers-color-scheme: dark)", color: "#0f0f0f" },
+	],
 };
 
 export const metadata: Metadata = {
@@ -47,7 +51,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
-				className={`${geist.variable} ${geistMono.variable} bg-white font-sans tracking-tight antialiased dark:bg-zinc-950`}
+				className={`${inter.variable} ${jetBrainsMono.variable} bg-background text-foreground font-sans antialiased`}
 			>
 				{children}
 			</body>
